@@ -91,7 +91,7 @@
 		"proportional"	"0"
 
 		"PaintBackgroundType"	"1"
-		"bgcolor_override"	"Black"
+		"bgcolor_override"	"White"
 		"Texture1"			"vgui/hud/scaleform/healtharmor_background"
 
  		"simple_wide"	"248"
