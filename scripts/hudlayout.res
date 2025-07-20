@@ -52,7 +52,7 @@
 		"Texture1"			"vgui/hud/scaleform/armor"
 		
 		"BuyZoneIconFg"		"White"
-		"margin_right"		"48"
+		"margin_right"		"68"
 	}
 	"HudAmmo"
 	{
