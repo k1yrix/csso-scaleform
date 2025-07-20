@@ -11,7 +11,7 @@
 		"base_resolution_tall"	"1080"
 
 		"scaleImage"			"1"
-		"image"				"hud/scaleform/mvp2.png"
+		"image"				"hud/scaleform/mvp2"
 	}
 	"TeamLogo"
 	{
