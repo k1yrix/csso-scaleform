@@ -4,12 +4,12 @@
 	{
 		"fieldName"			"AccountLabel"
 		"xpos"				"64"
-		"ypos"				"3"
+		"ypos"				"4"
 		"wide"				"256"
 		"tall"				"40"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
-		"textAlignment"		"west"
+		"textAlignment"		"center"
 		"font"				"AccountFont"
 		"fgcolor_override"	"White"
 	}
@@ -17,8 +17,8 @@
 	"BuyZoneIcon"
 	{
 		"fieldName"			"BuyZoneIcon"
-		"xpos"				"12"
-		"ypos"				"-4"
+		"xpos"				"4"
+		"ypos"				"-1"
 		"wide"				"30"
 		"tall"				"30"
 		"base_resolution_wide" "1920"
