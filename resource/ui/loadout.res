@@ -33,6 +33,10 @@
 		"visible"		"1"
 		"enabled"		"1"
 		"zpos"		"3"
+
+		"PaintBackgroundType"	"1"
+		"bgcolor_override"	"White"
+		"Texture1"			"vgui/hud/scaleform/weapon"
 	}
 	"secondary"
 	{
@@ -45,6 +49,10 @@
 		"visible"		"1"
 		"enabled"		"1"
 		"zpos"		"3"
+
+		"PaintBackgroundType"	"1"
+		"bgcolor_override"	"White"
+		"Texture1"			"vgui/hud/scaleform/weapon"
 	}
 	"hegrenade"
 	{

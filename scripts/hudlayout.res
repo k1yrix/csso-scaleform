@@ -369,7 +369,7 @@
 		"fieldName" "HudWeaponSelection"
 		"xpos"	"r640"
 		"wide"	"640"
-		"ypos" 	"30"
+		"ypos" 	"16"
 		"visible" "1"
 		"enabled" "1"
 		"SmallBoxSize" "60"
