@@ -49,7 +49,7 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/money_background"
+		"Texture1"			"vgui/hud/scaleform/armor"
 		
 		"BuyZoneIconFg"		"White"
 		"margin_right"		"48"
