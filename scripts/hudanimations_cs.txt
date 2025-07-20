@@ -1,0 +1,668 @@
+// sample animation script
+//
+//
+// commands:
+//	Animate <panel name> <variable> <target value> <interpolator> <start time> <duration>
+//		variables:
+//			FgColor
+//			BgColor
+//			Position
+//			Size
+//			Blur		(hud panels only)
+//			TextColor	(hud panels only)
+//			Ammo2Color	(hud panels only)
+//			Alpha		(hud panels only)
+//			SelectionAlpha  (hud weapon selection only)
+//			TextScan	(hud weapon selection only)
+//
+//		interpolator:
+//			Linear
+//			Accel - starts moving slow, ends fast
+//			Deaccel - starts moving fast, ends slow
+//			Spline - simple ease in/out curve
+//			Pulse - < freq > over the duration, the value is pulsed (cosine) freq times ending at the dest value (assuming freq is integral)
+//			Flicker - < randomness factor 0.0 to 1.0 > over duration, each frame if random # is less than factor, use end value, otherwise use prev value
+//
+//	RunEvent <event name> <start time>
+//		starts another even running at the specified time
+//
+//	StopEvent <event name> <start time>
+//		stops another event that is current running at the specified time
+//
+//	StopAnimation <panel name> <variable> <start time>
+//		stops all animations refering to the specified variable in the specified panel
+//
+//	StopPanelAnimations <panel name> <start time>
+//		stops all active animations operating on the specified panel
+//
+//  SetFont <panel name> <fontparameter> <fontname from scheme> <set time> 
+//
+//	SetTexture <panel name> <textureidname> <texturefilename> <set time>
+//
+//  SetString <panel name> <string varname> <stringvalue> <set time>
+//
+//
+// Useful game console commands:
+//	cl_Animationinfo <hudelement name> or <panelname> 
+//		displays all the animatable variables for the hud element
+//
+
+event LevelInit
+{
+}
+
+event OpenWeaponSelectionMenu
+{
+	StopEvent CloseWeaponSelectionMenu	0.0
+	StopEvent WeaponPickup				0.0
+
+	// make the display visible
+	Animate HudWeaponSelection Alpha 		"128"		Linear 0.0 0.1
+	Animate HudWeaponSelection SelectionAlpha 	"255"	Linear 0.0 0.1
+	Animate HudWeaponSelection FgColor		"FgColor"	Linear 0.0 0.1
+	//Animate HudWeaponSelection TextColor	"BrightFg"	Linear 0.0 0.1
+	Animate HudWeaponSelection TextScan		"1" 		Linear 0.0 0.1
+}
+
+event CloseWeaponSelectionMenu
+{
+	StopEvent CloseWeaponSelectionMenu	0.0
+	StopEvent WeaponPickup				0.0
+
+	// make the display visible
+	Animate HudWeaponSelection Alpha 		"128"		Linear 0.0 0.1
+	Animate HudWeaponSelection SelectionAlpha 	"255"	Linear 0.0 0.1
+	Animate HudWeaponSelection FgColor		"FgColor"	Linear 0.0 0.1
+	//Animate HudWeaponSelection TextColor	"BrightFg"	Linear 0.0 0.1
+	Animate HudWeaponSelection TextScan		"1" 		Linear 0.0 0.1
+}
+
+
+event MenuOpen
+{
+	StopEvent	MenuClose 0.0 
+
+	// fade in
+	Animate HudMenu Alpha 		"255"		Linear 0.0 0.1
+	Animate HudMenu SelectionAlpha 	"255"		Linear 0.0 0.1
+	Animate HudMenu FgColor		"FgColor"		Linear 0.0 0.1
+	Animate HudMenu MenuColor		"MenuColor"	Linear  0.0 0.1
+	Animate HudMenu ItemColor		"ItemColor"	Linear 0.0 0.1
+	Animate HudMenu TextScan		"1"		Linear 0.0 0.1
+
+	// Undo any blur
+	Animate HudMenu		Blur		"1"			Linear	0.0		0.01
+}
+
+event MenuClose
+{	
+	// Hide it
+	Animate HudMenu Alpha 		"0" Linear 0.0 1
+	Animate HudMenu SelectionAlpha 	"0" Linear 0.0 1
+	Animate HudMenu FgColor		"0 0 0 0" Linear 0.0 1
+	Animate HudMenu MenuColor		"0 0 0 0" Linear 0.0 1
+	Animate HudMenu ItemColor		"0 0 0 0" Linear 0.0 1
+}
+
+event MenuPulse
+{
+	Animate HudMenu		Blur		"7"			Linear	0.0		0.1
+	Animate HudMenu		Blur		"2"			Deaccel	0.1		0.1
+	Animate HudMenu		Blur		"7"			Linear	0.2		0.1
+	Animate HudMenu		Blur		"2"			Deaccel	0.3		0.1
+	Animate HudMenu		Blur		"7"			Linear	0.4		0.1
+	Animate HudMenu		Blur		"2"			Deaccel	0.5		0.1
+	Animate	HudMenu		Blur		"1"			Deaccel	0.6		0.4
+}
+
+event TimerIncrement
+{
+	Animate HudTimer		Blur		"7"			Linear	0.0	0.1
+	Animate HudTimer		Blur		"2"			Deaccel	0.1		0.8
+	Animate	HudTimer		Blur		"0"			Deaccel	1.1		1.5
+}
+
+event TimerDecrement
+{
+	Animate HudTimer		Blur		"7"			Linear	0.0	0.1
+	Animate HudTimer		Blur		"2"			Deaccel	0.1		0.8
+	Animate	HudTimer		Blur		"0"			Deaccel	1.1		1.5
+}
+
+
+event ResourceIncrement
+{
+	Animate HudResources		Blur			"3"			Linear	0.0	0.0
+	Animate HudResources		PulseAmount		"0"			Linear	0.0	0.01
+	Animate HudResources		Blur			"1"			Deaccel	0.1	1.5
+	Animate HudResources		PulseAmount		"1"			Linear	0.1	2
+
+	Animate HudResources		PulseAmount		"0"			Linear	2	2
+}
+
+event ResourceDecrement
+{
+	Animate HudResources		Blur			"7"			Linear	0.0	0.0
+	Animate HudResources		PulseAmount		"0"			Linear	0.0	0.01
+	Animate HudResources		Blur			"1"			Deaccel	0.1	1.5
+	Animate HudResources		PulseAmount		"1"			Linear	0.1	2
+
+	Animate HudResources		PulseAmount		"0"			Linear	2	2
+}
+
+event ResourcePickup
+{
+	Animate HudResourcesPickup	Alpha			"255"			Linear	0	0
+	Animate HudResourcesPickup	Position		"80 r40"		Linear	0	0
+	Animate HudResourcesPickup	Position		"80 r120"		Deaccel	0	1
+	Animate HudResourcesPickup	Blur			"7"			Deaccel 0	0.2
+	Animate HudResourcesPickup	Alpha			"0"			Deaccel	.8	0.2
+	Animate	HudResourcesPickup	Blur		"1"			Deaccel	0.2	0.3
+}
+
+event PrimaryAmmoIncrement
+{
+}
+
+event PrimaryAmmoDecrement
+{
+	Animate HudAmmoPrimary  FgColor "HudIcon_Red" Linear 0.0 0.0001
+	Animate HudAmmoPrimary  FgColor "FgColor"   Accel 0.0 3.0
+}
+
+event PrimaryAmmoEmpty
+{
+}
+
+
+event SecondaryAmmoIncrement
+{
+}
+
+event SecondaryAmmoDecrement
+{
+	Animate HudAmmoPrimary  FgColor "HudIcon_Red" Linear 0.0 0.0001
+	Animate HudAmmoPrimary  FgColor "FgColor"   Accel 0.0 3.0
+}
+
+event SecondaryAmmoEmpty
+{
+}
+
+event ShowPrimaryAmmoClipShowSecondaryAmmo
+{
+	// Turn on secondary
+	Animate HudAmmoSecondary		Alpha		"255"	Linear	0.0		0.4
+	// Turn on secondary
+	Animate HudAmmoPrimaryClip		Alpha		"255"	Linear	0.0		0.4
+
+	// Move primary to left
+//	Animate HudAmmoPrimary			Position	"r125 400"	Deaccel	0.0		0.4
+//	Animate HudAmmoPrimaryClip		Position	"r55 400"	Deaccel	0.0		0.4
+
+}
+
+event ShowPrimaryAmmoClipHideSecondaryAmmo
+{
+	// Turn off secondary
+	Animate HudAmmoSecondary		Alpha		"0"	Linear	0.0		0.4
+	// Turn on secondary
+	Animate HudAmmoPrimaryClip		Alpha		"255"	Linear	0.0		0.4
+
+	// Move primary to left
+//	Animate HudAmmoPrimary			Position	"r100 400"	Deaccel	0.0		0.4
+//	Animate HudAmmoPrimaryClip		Position	"r30 400"	Deaccel	0.0		0.4
+}
+
+event HidePrimaryAmmoClipShowSecondaryAmmo
+{
+	// Turn on secondary
+	Animate HudAmmoSecondary		Alpha		"255"	Linear	0.0		0.4
+	// Turn off secondary
+	Animate HudAmmoPrimaryClip		Alpha		"0"	Linear	0.0		0.4
+
+	// Move primary to left
+//	Animate HudAmmoPrimary			Position	"100 400"	Deaccel	0.0		0.4
+//	Animate HudAmmoPrimaryClip		Position	"r30 400"	Deaccel	0.0		0.4
+}
+
+event HidePrimaryAmmoClipHideSecondaryAmmo
+{
+	// Turn off secondary
+	Animate HudAmmoSecondary		Alpha		"0"	Linear	0.0		0.4
+	// Turn off secondary
+	Animate HudAmmoPrimaryClip		Alpha		"0"	Linear	0.0		0.4
+
+	// Move primary to left
+//	Animate HudAmmoPrimary			Position	"r70 400"	Deaccel	0.0		0.4
+//	Animate HudAmmoPrimaryClip		Position	"r30 400"	Deaccel	0.0		0.4
+}
+
+
+event AccountMoneyRemoved
+{
+	StopPanelAnimations HudAccount 0.0
+	Animate HudAccount		FgColor	"HudIcon_Red" Linear 0.0 0.0001
+	Animate HudAccount		FgColor	"OrangeDim" Accel 2.5 0.5
+
+	Animate	HudAccount		Ammo2Color "HudIcon_Red" Linear 0.0 0.4
+	Animate HudAccount		Ammo2Color "0 0 0 0" Accel 2.5 0.5
+	
+	Animate HudAccount		icon2_ypos "16" Deaccel 0.0 0.5
+	Animate HudAccount		digit2_ypos "16" Deaccel 0.0 0.5
+	
+	Animate HudAccount		icon2_ypos "-4" Deaccel 2.5 0.5
+	Animate HudAccount		digit2_ypos "-4" Deaccel 2.5 0.5
+}
+
+event AccountMoneyAdded
+{
+	StopPanelAnimations HudAccount 0.0
+	Animate HudAccount		FgColor	"HudIcon_Green" Linear 0.0 0.0001
+	Animate HudAccount		FgColor	"OrangeDim" Accel 2.5 0.5
+
+	Animate HudAccount		Ammo2Color "HudIcon_Green" Accel 0.0 0.4
+	Animate HudAccount		Ammo2Color "0 0 0 0" Accel 2.5 0.5
+	
+	Animate HudAccount		icon2_ypos "16" Deaccel 0.0 0.5
+	Animate HudAccount		digit2_ypos "16" Deaccel 0.0 0.5
+	
+	Animate HudAccount		icon2_ypos "-4" Deaccel 2.5 0.5
+	Animate HudAccount		digit2_ypos "-4" Deaccel 2.5 0.5
+}
+
+event AccountMoneyInvisible
+{
+	StopPanelAnimations HudAccount 0.0
+	Animate HudAccount		FgColor	"OrangeDim" Linear 0.0 0.0001
+	Animate HudAccount		Ammo2Color "0 0 0 0" Linear 0.0 0.0001
+	
+	Animate HudAccount		icon2_ypos "-4" Linear 0.0 0.0001
+	Animate HudAccount		digit2_ypos "-4" Linear 0.0 0.0001
+}
+
+//activecolor - instantly turn red, fade back to yellow
+event AccountMoneyLegacyRemoved
+{
+	Animate HudAccount		FgColor	"HudIcon_Red" Linear 0.0 0.0001
+	Animate HudAccount		FgColor	"OrangeDim" Accel 0.0 3.0
+
+	Animate	HudAccount		Ammo2Color "HudIcon_Red" Linear 0.0 0.0001
+	Animate HudAccount		Ammo2Color "0 0 0 0" Accel 0.0 3.0
+}
+
+//activecolor - instantly turn green, fade back to yellow
+event AccountMoneyLegacyAdded
+{
+	Animate HudAccount		FgColor	"HudIcon_Green" Linear 0.0 0.0001
+	Animate HudAccount		FgColor	"OrangeDim" Accel 0.0 3.0
+
+	Animate HudAccount		Ammo2Color "HudIcon_Green" Accel 0.0 0.0001
+	Animate HudAccount		Ammo2Color "0 0 0 0" Accel 0.0 3.0
+}
+
+event AccountMoneyLegacyInvisible
+{
+	Animate HudAccount		FgColor	"OrangeDim" Accel 0.0 0.0001
+	Animate HudAccount		Ammo2Color "0 0 0 0" Accel 0.0 0.0001
+}
+
+event HealthRestored0
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor0"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor0"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored1
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor1"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor1"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored2
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor2"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor2"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored3
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor3"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor3"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored4
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor4"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor4"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored5
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor5"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor5"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored6
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor6"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor6"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored7
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor7"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor7"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored8
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor8"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor8"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored9
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor9"			Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor9"			Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored10
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor10"		Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor10"		Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthRestored11
+{
+	StopPanelAnimations	HealthProgress 0.0
+	StopPanelAnimations	HudHealthArmor 0.0
+	Animate HealthProgress		FgColor					"HudColor11"		Linear		0.0		0.0001
+	Animate HealthIcon			FgColor					"HudColor11"		Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background"	0.0001
+}
+
+event HealthTookDamage0
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor0"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage1
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor1"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage2
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor2"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage3
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor3"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage4
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor4"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage5
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor5"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage6
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor6"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage7
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor7"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage8
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor8"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage9
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor9"			Linear		1.0		0.0001
+}
+
+event HealthTookDamage10
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor10"		Linear		1.0		0.0001
+}
+
+event HealthTookDamage11
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthProgress		FgColor					"HudColor11"		Linear		1.0		0.0001
+}
+
+event HealthLow
+{
+	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	Animate	HealthIcon			FgColor					"255 0 0 255"		Linear		0.0		0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background_low"	0.0001
+}
+
+event AmmoCounterReset0
+{
+	Animate	BulletIcon			FgColor	"HudColor0"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset1
+{
+	Animate	BulletIcon			FgColor	"HudColor1"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset2
+{
+	Animate	BulletIcon			FgColor	"HudColor2"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset3
+{
+	Animate	BulletIcon			FgColor	"HudColor3"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset4
+{
+	Animate	BulletIcon			FgColor	"HudColor4"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset5
+{
+	Animate	BulletIcon			FgColor	"HudColor5"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset6
+{
+	Animate	BulletIcon			FgColor	"HudColor6"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset7
+{
+	Animate	BulletIcon			FgColor	"HudColor7"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset8
+{
+	Animate	BulletIcon			FgColor	"HudColor8"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset9
+{
+	Animate	BulletIcon			FgColor	"HudColor9"		Linear		0.0		0.0001
+}
+
+event AmmoCounterReset10
+{
+	Animate	BulletIcon			FgColor	"HudColor10"	Linear		0.0		0.0001
+}
+
+event AmmoCounterReset11
+{
+	Animate	BulletIcon			FgColor	"HudColor11"	Linear		0.0		0.0001
+}
+
+event AmmoCounterLow
+{
+	Animate	BulletIcon			FgColor	"255 0 0 255"	Linear		0.0		0.0001
+}
+
+event NotificationShow
+{
+	Animate NotificationPanel	ypos	"336"	Deaccel	0.0		0.1
+	Animate NotificationPanel	alpha	"255"	Deaccel	0.0		0.1
+}
+
+
+event NotificationHide
+{
+	Animate NotificationPanel	ypos	"400"	Linear	0.1		0.0001
+	Animate NotificationPanel	alpha	"0"		Linear	0.0		0.1
+}
+
+event HintMessageLower
+{
+	Animate HudHintDisplay YOffset	"60"		Deaccel	0.0		0.01
+}
+
+event HintMessageRaise
+{
+	Animate HudHintDisplay YOffset	"0"		Deaccel	0.0		0.4
+}
+
+event AlertShowOneShot
+{
+	Animate	AlertLabel			Alpha	255	Linear	0.0	0.3
+	Animate	AlertLabel			Alpha	0	Linear	5.0	0.2
+	Animate	AlertBorderUpper	Alpha	255	Linear	0.0	0.3
+	Animate	AlertBorderUpper	Alpha	0	Linear	5.0	0.2
+	Animate	AlertBorderBottom	Alpha	255	Linear	0.0	0.3
+	Animate	AlertBorderBottom	Alpha	0	Linear	5.0	0.2
+}
+
+event AlertShow
+{
+	Animate	AlertLabel			Alpha	255	Linear	0.0	0.3
+	Animate	AlertBorderUpper	Alpha	255	Linear	0.0	0.3
+	Animate	AlertBorderBottom	Alpha	255	Linear	0.0	0.3
+}
+
+event AlertHide
+{
+	Animate	AlertLabel			Alpha	0	Linear	0.0	0.2
+	Animate	AlertBorderUpper	Alpha	0	Linear	0.0	0.2
+	Animate	AlertBorderBottom	Alpha	0	Linear	0.0	0.2
+}
+
+event WinPanelShow
+{
+	Animate	WinPanel_Round				Alpha	255	Linear	0.0	0.2
+	// these are procedurally animated now
+//	Animate	FunFactLabel				Alpha	255	Linear	1.0	0.05
+//	Animate	GGTRNextWeaponBackground	Alpha	255	Linear	1.0	0.05
+//	Animate	GGTRNextWeaponLabel			Alpha	255	Linear	1.0	0.05
+//	Animate	GGTRNextWeaponIcon			Alpha	255	Linear	1.0	0.05
+//	Animate	GGTRBonusGrenadeIcon		Alpha	255	Linear	1.0	0.05
+}
+
+event WinPanelHide
+{
+	Animate	WinPanel_Round				Alpha	0	Linear	0.0	0.5
+	Animate	FunFactLabel				Alpha	0	Linear	0.5	0.01
+	Animate	GGTRNextWeaponBackground	Alpha	0	Linear	0.5	0.01
+	Animate	GGTRNextWeaponLabel			Alpha	0	Linear	0.5	0.01
+	Animate	GGTRNextWeaponIcon			Alpha	0	Linear	0.5	0.01
+	Animate	GGTRBonusGrenadeIcon		Alpha	0	Linear	0.5	0.01
+}
+
+event KeyHintMessageShow
+{
+	// show the hints
+	Animate HudHintKeyDisplay Alpha	255 Linear 0.0 0.5
+	Animate HudHintKeyDisplay FgColor	"HintMessageFg"		Linear 0.0 0.01
+
+	// hide the panel after a while	
+	Animate HudHintKeyDisplay Alpha	0 Linear 6.0 1.0
+}
+
+event KeyHintMessageHide
+{
+	Animate HudHintKeyDisplay Alpha	0 Linear 0.0 0.5
+}
+
+event MapOff
+{
+	Animate overview Position "0 0" Linear 0.0 0.001
+	Animate overview Size "0 0" Linear 0.0 0.001
+}
+
+event MapZoomToSmall
+{
+	Animate overview Position "16 16" Linear 0.0 0.2
+	Animate overview Size "160 120" Linear 0.0 0.2
+	
+	StopAnimation overview zoom 0.0
+	Animate overview zoom "1.0" Linear 0.0 0.0001
+	Animate overview zoom "3.0" Spline 0.0001 1.0
+}
+
+event MapZoomToLarge
+{
+	Animate overview Position "c-300 20" Linear 0.0 0.2
+	Animate overview Size "600 440" Linear 0.0 0.2
+	
+	StopAnimation overview zoom 0.0
+	Animate overview zoom "1.0" Spline 0.0 0.2
+}
