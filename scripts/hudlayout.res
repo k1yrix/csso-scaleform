@@ -89,6 +89,7 @@
 		"visible"		"1"
 		"enabled"		"1"
 		"proportional"	"0"
+		"Alpha"			"125"
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
