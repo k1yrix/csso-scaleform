@@ -617,7 +617,7 @@
 		"base_resolution_wide"	"1920"
 		"base_resolution_tall"	"1080"
 		"textAlignment"	"west"
-		"font"		"Default"
+		"font"		"LocationFont"
 		"fgcolor_override"	"180 180 180 230"
 
 		"PaintBackgroundType"	"1"
