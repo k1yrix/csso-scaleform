@@ -619,7 +619,7 @@
 		"textAlignment"	"west"
 		"font"		"stratum2bold"
 		"fgcolor_override"	"180 180 180 230"
-`
+
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
 		"Texture1"	"vgui/hud/scaleform/location_corner"
