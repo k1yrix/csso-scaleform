@@ -11,37 +11,7 @@
 		"base_resolution_tall"	"1080"
 
 		"scaleImage"			"1"
-		"image"				"hud/winpanel_draw_background"
-	}
-	"BorderUpper"
-	{
-		"controlName"			"ImagePanel"
-		"fieldName"			"BorderUpper"
-		"xpos"				"0"
-		"ypos"				"82"
-		"wide"				"w1020"
-		"tall"				"i1"
-		"base_resolution_wide" "1920"
-		"base_resolution_tall" "1080"
-		"fgcolor_override"	"White"
-
-		"scaleImage"			"1"
-		"image"				"hud/winpanel_border"
-	}
-	"BorderBottom"
-	{
-		"controlName"			"ImagePanel"
-		"fieldName"			"BorderBottom"
-		"xpos"				"0"
-		"ypos"				"159"
-		"wide"				"w1020"
-		"tall"				"i1"
-		"base_resolution_wide" "1920"
-		"base_resolution_tall" "1080"
-		"fgcolor_override"	"White"
-
-		"scaleImage"			"1"
-		"image"				"hud/winpanel_border"
+		"image"				"hud/scaleform/mvp2.png"
 	}
 	"TeamLogo"
 	{

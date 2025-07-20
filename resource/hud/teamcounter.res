@@ -40,7 +40,7 @@
 		"tall"				"55"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
-		"image"				"hud/teamcounter_alivebgct"
+		"image"				"hud/scaleform/ct.png"
 		"scaleImage"			"1"
 		"zpos"				"-1"
 	}
@@ -54,7 +54,7 @@
 		"tall"				"55"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
-		"image"				"hud/teamcounter_alivebgt"
+		"image"				"hud/scaleform/t.png"
 		"scaleImage"			"1"
 		"zpos"				"-1"
 	}
