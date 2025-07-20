@@ -622,7 +622,6 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/healtharmor_background"
 		"Texture1"	"vgui/hud/scaleform/location_corner"
 	}
 
