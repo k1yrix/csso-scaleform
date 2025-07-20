@@ -69,7 +69,7 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/ammo_background"
+		"Texture1"			"vgui/hud/scaleform/ammo"
 
 		"simple_xpos"	"r282"
 		"simple_ypos"	"r54"
@@ -92,7 +92,7 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/healtharmor_background"
+		"Texture1"			"vgui/hud/scaleform/healtharmor_background"
 
  		"simple_wide"	"248"
 		"simple_tall"	"53"
