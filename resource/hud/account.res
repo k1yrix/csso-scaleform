@@ -3,10 +3,10 @@
 	"AccountLabel"
 	{
 		"fieldName"			"AccountLabel"
-		"xpos"				"128"
+		"xpos"				"64"
 		"ypos"				"2"
 		"wide"				"256"
-		"tall"				"49"
+		"tall"				"40"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
 		"textAlignment"		"west"
