@@ -491,7 +491,7 @@ event HealthLow
 {
 	Animate	HealthProgress		FgColor					"255 0 0 255"		Linear		0.0		0.0001
 	Animate	HealthIcon			FgColor					"255 0 0 255"		Linear		0.0		0.0001
-	SetTexture	HudHealthArmor	Texture1				"vgui/hud/scaleform/healtharmor_background_low"	0.0001
+	SetTexture	HudHealthArmor	Texture1				"vgui/hud/healtharmor_background_low"	0.0001
 }
 
 event AmmoCounterReset0
