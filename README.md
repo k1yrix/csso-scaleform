@@ -6,6 +6,6 @@ inspired by [abandonedpool's scaleform hud for csgo demos](https://github.com/ab
 
 
 ## credits
-pimon // original code for csso v1.1 assets 
-abandonedpool // scaleform assets
-valve // those who started it all
+- pimon // original code for csso v1.1 assets 
+- abandonedpool // scaleform assets
+- valve // those who started it all
