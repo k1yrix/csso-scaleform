@@ -92,7 +92,7 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/scaleform/healtharmor_background_low"
+		"Texture1"			"vgui/hud/healtharmor_background"
 
  		"simple_wide"	"248"
 		"simple_tall"	"53"
@@ -385,6 +385,7 @@
 		"TextColor" "SelectionTextFg"
 		"MaxSlots"	"5"
 		"PlaySelectSounds"	"0"
+		"Texture1"	"vgui/hud/scaleform/weapon"
 	}
 
 	HudCrosshair
