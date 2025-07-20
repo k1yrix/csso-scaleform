@@ -612,14 +612,14 @@
 		"enabled"	"1"
 		"xpos"		"25"
 		"ypos"		"30"
-		"wide"		"512"
-		"tall"		"24"
+		"wide"		"410"
+		"tall"		"46"
 		"base_resolution_wide"	"1920"
 		"base_resolution_tall"	"1080"
 		"textAlignment"	"west"
-		"font"		"LocationFont"
+		// "font"		"LocationFont"
 		"fgcolor_override"	"180 180 180 230"
-
+`
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
 		"Texture1"	"vgui/hud/scaleform/location_corner"
