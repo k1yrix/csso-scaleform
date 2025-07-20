@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui\hud\scaleform\location_corner"
+	"$translucent" 1
+	"$ignorez" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
+}
