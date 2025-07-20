@@ -79,7 +79,7 @@
 	"HudHealthArmor"
 	{
 		"fieldName"		"HudHealthArmor"
-		"xpos"			"0"
+		"xpos"			"3"
 		"ypos"			"r53"
 		"zpos"			"0"
  		"wide"			"424"
