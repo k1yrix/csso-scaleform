@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui\hud\mvp2"
+	"$translucent" 1
+	"$ignorez" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
+}
