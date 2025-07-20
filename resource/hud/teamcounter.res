@@ -40,7 +40,7 @@
 		"tall"				"55"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
-		"image"				"hud/scaleform/ct.png"
+		"image"				"hud/scaleform/ct.tga"
 		"scaleImage"			"1"
 		"zpos"				"-1"
 	}
@@ -54,7 +54,7 @@
 		"tall"				"55"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
-		"image"				"hud/scaleform/t.png"
+		"image"				"hud/scaleform/t.tga"
 		"scaleImage"			"1"
 		"zpos"				"-1"
 	}
