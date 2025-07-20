@@ -92,7 +92,7 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/scaleform/healtharmor_background_low"
+		"Texture1"			"vgui\hud\scaleform\healtharmor_background_low"
 
  		"simple_wide"	"248"
 		"simple_tall"	"53"
