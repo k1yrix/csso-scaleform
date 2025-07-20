@@ -369,7 +369,7 @@
 		"fieldName" "HudWeaponSelection"
 		"xpos"	"r640"
 		"wide"	"640"
-		"ypos" 	"22"
+		"ypos" 	"30"
 		"visible" "1"
 		"enabled" "1"
 		"SmallBoxSize" "60"
@@ -385,7 +385,6 @@
 		"TextColor" "SelectionTextFg"
 		"MaxSlots"	"5"
 		"PlaySelectSounds"	"0"
-		"Texture1"	"vgui/hud/scaleform/weapon"
 	}
 
 	HudCrosshair
