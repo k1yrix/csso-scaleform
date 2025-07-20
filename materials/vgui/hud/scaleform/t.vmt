@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "vgui\hud\t"
+	"$basetexture" "vgui\hud\scaleform\t"
 	"$translucent" 1
 	"$ignorez" 1
 	"$vertexalpha" 1
