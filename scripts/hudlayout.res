@@ -619,6 +619,7 @@
 		"textAlignment"	"west"
 		"font"		"LocationFont"
 		"fgcolor_override"	"180 180 180 230"
+		"Texture1"	"vgui/hud/scaleform/location_corner"
 	}
 
 	HudScope
