@@ -6,7 +6,7 @@
 		"xpos"				"64"
 		"ypos"				"4"
 		"wide"				"256"
-		"tall"				"30"
+		"tall"				"40"
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
 		"textAlignment"		"center"
