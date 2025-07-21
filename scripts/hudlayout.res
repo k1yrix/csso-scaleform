@@ -379,7 +379,7 @@
 		"SelectionNumberXPos" "4"
 		"SelectionNumberYPos" "4"
 		"SelectionGrowTime"	"0.4"
-		"IconXPos" "8"
+		"IconXPos" "100"
 		"IconYPos" "0"
 		"TextYPos" "68"	
 		"TextColor" "SelectionTextFg"
