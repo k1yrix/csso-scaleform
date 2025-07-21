@@ -375,7 +375,7 @@
 		"SmallBoxSize" "60"
 		"LargeBoxWide" "108"
 		"LargeBoxTall" "80"
-		"BoxGap" "8"
+		"BoxGap" "40"
 		"SelectionNumberXPos" "4"
 		"SelectionNumberYPos" "4"
 		"SelectionGrowTime"	"0.4"
