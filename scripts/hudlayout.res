@@ -13,16 +13,16 @@
 		"base_resolution_tall"	"1080"
 		
 		"icons_base_xpos"		"w34" // counts from the right side
-		"icons_base_ypos"		"946"
+		"icons_base_ypos"		"953"
 
 		"name_label_xpos"		"w4" // relative to icons_base_xpos
-		"name_label_ypos"		"41"
+		"name_label_ypos"		"48"
 
 		"count_label_xpos"	"w32" // relative to the icon
-		"count_label_ypos"	"20" // relative to the icon
+		"count_label_ypos"	"27" // relative to the icon
 
 		"slot_label_xpos"		"w5" // counts from the right side
-		"slot_label_ypos"		"-5" // relative to the icon
+		"slot_label_ypos"		"2" // relative to the icon
 
 		"weapon_icon_tall"				"48"
 		"weapon_icon_slot_margin"		"80"
