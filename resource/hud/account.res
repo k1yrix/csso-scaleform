@@ -18,7 +18,7 @@
 	{
 		"fieldName"			"BuyZoneIcon"
 		"xpos"				"12"
-		"ypos"				"-2"
+		"ypos"				"-1"
 		"wide"				"30"
 		"tall"				"30"
 		"base_resolution_wide" "1920"
