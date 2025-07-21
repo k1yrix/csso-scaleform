@@ -30,7 +30,7 @@
 		"weapon_icon_defuser_margin"	"39"
 
 		"defuser_icon_xpos"	"w3" // relative to icons_base_xpos
-		"defuser_icon_ypos"	"980"
+		"defuser_icon_ypos"	"500"
 		"defuser_icon_tall"	"45"
 		"defuser_icon"		"materials/vgui/hud/svg/defuser.svg"
 		"defuser_fgcolor"		"71 93 117 255"
