@@ -6,7 +6,7 @@
 		"visible"	"1"
 		"enabled"	"1"
 		"xpos"		"0"
-		"ypos"		"0"
+		"ypos"		"-45"
 		"wide"		"w1920" // w means calculate proportions by width instead of height (otherwise the width is incorrect on 4:3)
 		"tall"		"1080"
 		"base_resolution_wide"	"1920"
@@ -25,12 +25,12 @@
 		"slot_label_ypos"		"2" // relative to the icon
 
 		"weapon_icon_tall"				"48"
-		"weapon_icon_slot_margin"		"80"
+		"weapon_icon_slot_margin"		"85"
 		"weapon_icon_pos_margin"		"w30"
 		"weapon_icon_defuser_margin"	"39"
 
 		"defuser_icon_xpos"	"w3" // relative to icons_base_xpos
-		"defuser_icon_ypos"	"980"
+		"defuser_icon_ypos"	"960"
 		"defuser_icon_tall"	"45"
 		"defuser_icon"		"materials/vgui/hud/svg/defuser.svg"
 		"defuser_fgcolor"		"71 93 117 255"
