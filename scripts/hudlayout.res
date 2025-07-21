@@ -41,7 +41,7 @@
 		"xpos"	"0"
 		"ypos"	"350"
 		"wide"	"512"
-		"tall"  "36"
+		"tall"  "40"
 		"base_resolution_wide"	"1920"
 		"base_resolution_tall"	"1080"
 		"visible" "1"
