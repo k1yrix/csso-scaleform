@@ -3,7 +3,7 @@
 	CSHudWeaponSelection
 	{
 		"fieldName" "CSHudWeaponSelection"
-		"visible"	"0"
+		"visible"	"1"
 		"enabled"	"1"
 		"xpos"		"0"
 		"ypos"		"0"
@@ -370,7 +370,7 @@
 		"xpos"	"r640"
 		"wide"	"640"
 		"ypos" 	"16"
-		"visible" "1"
+		"visible" "0"
 		"enabled" "1"
 		"SmallBoxSize" "60"
 		"LargeBoxWide" "108"
