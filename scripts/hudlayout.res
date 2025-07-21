@@ -26,7 +26,7 @@
 
 		"weapon_icon_tall"				"48"
 		"weapon_icon_slot_margin"		"80"
-		"weapon_icon_pos_margin"		"w80"
+		"weapon_icon_pos_margin"		"w30"
 		"weapon_icon_defuser_margin"	"39"
 
 		"defuser_icon_xpos"	"w3" // relative to icons_base_xpos
