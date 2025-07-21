@@ -3,8 +3,8 @@
 	CSHudWeaponSelection
 	{
 		"fieldName" "CSHudWeaponSelection"
-		"visible"	"1"
-		"enabled"	"0"
+		"visible"	"0"
+		"enabled"	"1"
 		"xpos"		"0"
 		"ypos"		"0"
 		"wide"		"w1920" // w means calculate proportions by width instead of height (otherwise the width is incorrect on 4:3)
