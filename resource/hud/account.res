@@ -4,7 +4,7 @@
 	{
 		"fieldName"			"AccountLabel"
 		"xpos"				"64"
-		"ypos"				"2"
+		"ypos"				"1"
 		"wide"				"512"
 		"tall"				"40"
 		"base_resolution_wide" "1920"
