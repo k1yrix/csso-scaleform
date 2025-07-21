@@ -1587,7 +1587,7 @@ Scheme
 			"1"
 			{
 				"name"		"Stratum2 Bold"
-				"tall"		"16"
+				"tall"		"14"
 				"weight"		"0"
 				"antialias"	"1"
 			}
