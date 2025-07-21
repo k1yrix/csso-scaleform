@@ -4,7 +4,7 @@
 	{
 		"fieldName"			"AccountLabel"
 		"xpos"				"64"
-		"ypos"				"4"
+		"ypos"				"6"
 		"wide"				"512"
 		"tall"				"40"
 		"base_resolution_wide" "1920"
@@ -18,7 +18,7 @@
 	{
 		"fieldName"			"BuyZoneIcon"
 		"xpos"				"12"
-		"ypos"				"-1"
+		"ypos"				"1"
 		"wide"				"30"
 		"tall"				"30"
 		"base_resolution_wide" "1920"
