@@ -370,7 +370,7 @@
 		"xpos"	"r640"
 		"wide"	"640"
 		"ypos" 	"16"
-		"visible" "0"
+		"visible" "1"
 		"enabled" "1"
 		"SmallBoxSize" "60"
 		"LargeBoxWide" "108"
