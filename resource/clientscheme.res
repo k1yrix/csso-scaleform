@@ -1613,7 +1613,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Stratum2 Regular"
+				"name"		"Stratum2 Bold"
 				"tall"		"10"
 				"weight"		"0"
 				"antialias"	"1"
@@ -1630,7 +1630,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Stratum2 Regular Monodigit"
+				"name"		"Stratum2 Bold"
 				"tall"		"8"
 				"weight"		"0"
 				"antialias"	"1"
