@@ -82,7 +82,7 @@
 		"xpos"			"0"
 		"ypos"			"r53"
 		"zpos"			"0"
- 		"wide"			"424"
+ 		"wide"			"500"
 		"tall"			"53"
 		"base_resolution_wide"	"1920"
 		"base_resolution_tall"	"1080"
