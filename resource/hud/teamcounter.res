@@ -69,7 +69,7 @@
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
 		"textAlignment"		"center"
-		"font"				"RoundTimerFont"
+		"font"				"WinCountFont"
 		"fgcolor_override"	"TeamCT"
 		
 		"bgcolor_override"	"0 0 0 153"
@@ -125,7 +125,7 @@
 		"base_resolution_wide" "1920"
 		"base_resolution_tall" "1080"
 		"textAlignment"		"center"
-		"font"				"RoundTimerFont"
+		"font"				"WinCountFont"
 		"fgcolor_override"	"TeamT"
 		
 		"bgcolor_override"	"0 0 0 153"

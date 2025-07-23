@@ -1535,6 +1535,16 @@ Scheme
 			"1"
 			{
 				"name"		"Stratum2 Bold Monodigit"
+				"tall"		"15"
+				"weight"		"0"
+				"antialias"	"1"
+			}
+		}
+		"WinCountFont"
+		{
+			"1"
+			{
+				"name"		"Stratum2 Bold Monodigit"
 				"tall"		"12"
 				"weight"		"0"
 				"antialias"	"1"
