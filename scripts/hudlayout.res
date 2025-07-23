@@ -6,7 +6,7 @@
 		"visible"	"1"
 		"enabled"	"1"
 		"xpos"		"0"
-		"ypos"		"-45"
+		"ypos"		"-15"
 		"wide"		"w1920" // w means calculate proportions by width instead of height (otherwise the width is incorrect on 4:3)
 		"tall"		"1080"
 		"base_resolution_wide"	"1920"
@@ -27,7 +27,7 @@
 		"weapon_icon_tall"				"48"
 		"weapon_icon_slot_margin"		"85"
 		"weapon_icon_pos_margin"		"w30"
-		"weapon_icon_defuser_margin"	"39"
+		"weapon_icon_defuser_margin"	"60"
 
 		"defuser_icon_xpos"	"w3" // relative to icons_base_xpos
 		"defuser_icon_ypos"	"960"
