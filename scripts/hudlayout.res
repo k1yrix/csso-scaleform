@@ -617,7 +617,7 @@
 		"base_resolution_tall"	"1080"
 		"textAlignment"	"west"
 		"font"		"LocationFont"
-		// "fgcolor_override"	"180 180 180 230"
+		"fgcolor_override"	"White"
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
