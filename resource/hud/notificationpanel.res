@@ -76,7 +76,9 @@
 		"base_resolution_tall" "1080"
 		"fgcolor_override"	"234 65 65 255"
 
-		"image"				"materials/vgui/hud/scaleform/other_icons/ui/alert"
+		"PaintBackgroundType"	"1"
+		"bgcolor_override"	"White"
+		"Texture1"			"materials/vgui/hud/scaleform/other_icons/ui/alert"
 	}
 
 	"InfoIcon"
