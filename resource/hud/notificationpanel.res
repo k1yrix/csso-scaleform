@@ -78,7 +78,7 @@
 
 		"PaintBackgroundType"	"1"
 		"bgcolor_override"	"White"
-		"Texture1"			"vgui/hud/scaleform/other_icons/ui/alert"
+		"Texture1"			"vgui/hud/alert"
 	}
 
 	"InfoIcon"
