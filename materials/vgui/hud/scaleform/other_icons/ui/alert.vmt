@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "materials\vgui\hud\scaleform\other_icons\ui\alert"
+	"$basetexture" "vgui\hud\scaleform\other_icons\ui\alert"
 	"$translucent" 1
 	"$ignorez" 1
 	"$vertexalpha" 1
