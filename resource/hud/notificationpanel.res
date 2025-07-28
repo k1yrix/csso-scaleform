@@ -76,7 +76,7 @@
 		"base_resolution_tall" "1080"
 		"fgcolor_override"	"234 65 65 255"
 
-		"image"				"materials/vgui/hud/svg/alert.svg"
+		"image"				"materials/vgui/hud/scaleform/other_icons/ui/alert"
 	}
 
 	"InfoIcon"

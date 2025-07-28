@@ -1651,7 +1651,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Stratum2 Bold"
+				"name"		"Stratum2 Medium"
 				"tall"		"18"
 				"weight"		"0"
 				"antialias"	"1"
@@ -1804,7 +1804,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Stratum2 Bold"
+				"name"		"Stratum2 Medium"
 				"tall"		"16"
 				"weight"		"0"
 				"antialias"	"1"
