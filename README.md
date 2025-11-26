@@ -1,7 +1,7 @@
 # CSSO: Scaleform
 
 > [!WARNING]
-> I may redevelop this addon for v2 as it may be more better that way as v2 full release could be around the corner two beta releases from now
+> This is the main branch, designed for CSSO v2 Betas. If you are looking for the branch designed for CSSO v1.1, please visit [here](https://github.com/k1yrix/csso-scaleform/tree/v1.1-archive).
 
 I present to you all my grandest thing I've ever done since I started modding for source offensive. this is a project that replaces the HUD in source offensive v1.1 with scaleform style (at least crica 2018)
 
